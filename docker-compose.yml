@@ -41,6 +41,6 @@ services:
   #     - "9200:9200"
 networks:
   nodejs:
-    driver: bridge
+    driver: host
 volumes:
   mongodb_data:
