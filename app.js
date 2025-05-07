@@ -36,8 +36,8 @@ const logger = winston.createLogger({
 //   res.end('Hello, world!\n');
 // });
 
-server.listen(3000, () => {
-  logger.info('Server started on port 3000');
-  console.log('Server running at http://localhost:3000/');
-});
+// server.listen(3000, () => {
+//   logger.info('Server started on port 3000');
+//   console.log('Server running at http://localhost:3000/');
+// });
 // //logstash
