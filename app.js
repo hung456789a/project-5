@@ -20,10 +20,10 @@ mongoose.connect(process.env.MONGO_URI)
         logger.info('🚀 Server running on http://localhost:3000');
         console.log('Server running on http://localhost:3000');
   });
+})
   .catch(err => {
     logger.error('❌ MongoDB connection failed', { error: err});
     console.log(err));
-  });
 // //logstash
 // const logger = winston.createLogger({
 //   transports: [
