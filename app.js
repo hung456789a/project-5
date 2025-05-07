@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(3000, () => {
         logger.info('🚀 Server running on http://localhost:3000');
-        console.log('Server running on http://localhost:3000'));
+        console.log('Server running on http://localhost:3000');
   });
   .catch(err => {
     logger.error('❌ MongoDB connection failed', { error: err});
