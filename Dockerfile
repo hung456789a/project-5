@@ -3,4 +3,4 @@ WORKDIR /app
 COPY node_modules /app/
 COPY . /app/
 RUN npm install -y
-CMD ["node", "/app/index.js"]
+CMD ["node", "/app/app.js"]
