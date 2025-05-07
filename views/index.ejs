@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>To-do App</title></head>
+<body>
+  <h1>To-do List</h1>
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="New task" required>
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    <% tasks.forEach(task => { %>
+      <li>
+        <% if (task.completed) { %>
+          <s><%= task.title %></s>
+        <% } else { %>
+          <%= task.title %>
+          <form action="/done/<%= task._id %>" method="POST" style="display:inline;">
+            <button type="submit">Done</button>
+          </form>
+        <% } %>
+        <form action="/delete/<%= task._id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
