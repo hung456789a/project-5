@@ -26,6 +26,7 @@ services:
 
   logstash:
     image: docker.elastic.co/logstash/logstash:9.0.0
+    container_name: logstash
     volumes:
       - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     ports:
