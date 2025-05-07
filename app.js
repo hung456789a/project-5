@@ -1,7 +1,7 @@
 require('dotenv').config();
 const http = require('http'); 
-// const winston = require('winston'); //library for logstash
-// const { LogstashTransport } = require('winston-logstash-transport');  //library for logstash
+const winston = require('winston'); //library for logstash
+const { LogstashTransport } = require('winston-logstash-transport');  //library for logstash
 const express = require('express');     // libary for mongodb connection
 const mongoose = require('mongoose');   // libary for mongodb connection
 const bodyParser = require('body-parser');   // libary for mongodb connection
@@ -19,15 +19,15 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 // //logstash
-// const logger = winston.createLogger({
-//   transports: [
-//     new LogstashTransport({
-//       port: 5000,
-//       node_name: 'my-node-app',
-//       host: 'logstash' // địa chỉ Logstash
-//     })
-//   ]
-// });
+const logger = winston.createLogger({
+  transports: [
+    new LogstashTransport({
+      port: 5000,
+      node_name: 'my-node-app',
+      host: 'logstash' // địa chỉ Logstash
+    })
+  ]
+});
 
 // const server = http.createServer((req, res) => {
 //   logger.info('Received request', { url: req.url });
@@ -36,8 +36,8 @@ mongoose.connect(process.env.MONGO_URI)
 //   res.end('Hello, world!\n');
 // });
 
-// server.listen(3000, () => {
-//   logger.info('Server started on port 3000');
-//   console.log('Server running at http://localhost:3000/');
-// });
+server.listen(3000, () => {
+  logger.info('Server started on port 3000');
+  console.log('Server running at http://localhost:3000/');
+});
 // //logstash
