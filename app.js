@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URI)
 })
   .catch(err => {
     logger.error('❌ MongoDB connection failed', { error: err});
-    console.log(err));
+    console.log(err)});
 // //logstash
 // const logger = winston.createLogger({
 //   transports: [
