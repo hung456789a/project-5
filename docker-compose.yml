@@ -24,15 +24,15 @@ services:
   #   depends_on:
   #     - elasticsearch
 
-  logstash:
-    image: docker.elastic.co/logstash/logstash:9.0.0
-    container_name: logstash
-    volumes:
-      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-    ports:
-      - "5000:5000"
-    networks:
-      - nodejs
+  # logstash:
+  #   image: docker.elastic.co/logstash/logstash:9.0.0
+  #   container_name: logstash
+  #   volumes:
+  #     - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+  #   ports:
+  #     - "5000:5000"
+  #   networks:
+  #     - nodejs
 
   # elasticsearch:
   #   image: docker.elastic.co/elasticsearch/elasticsearch:9.0.0
@@ -44,5 +44,3 @@ services:
 networks:
   nodejs:
     driver: bridge
-volumes:
-  mongodb_data:
