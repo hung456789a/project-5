@@ -8,7 +8,7 @@ const logger = winston.createLogger({
     new LogstashTransport({
       port: 5000,
       host: 'logstash',              // Tên service hoặc container Logstash
-      node_name: 'logstash',
+      node_name: '',
       max_connect_retries: 10,       // ✅ Tự động thử lại kết nối
       timeout_connect_retries: 10000 // ✅ chờ tối đa 10s mỗi lần
     }),
